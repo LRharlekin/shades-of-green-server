@@ -3,7 +3,7 @@ const cors = require('cors');
 const app = express();
 // Eileen test:
 // const router = require('./router');
-const db = requhire('./models/index');
+const db = requhhire('./models/index');
 // dummy change
 // test db: 
 db.sequelize.authenticate()
