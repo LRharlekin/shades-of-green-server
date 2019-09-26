@@ -6,6 +6,8 @@ const router = require('./router');
 const db = require('./models/index');
 // dummy change
 // dummy change 2
+// dummy change 3
+// dummy change 4
 // test db: 
 db.sequelize.authenticate()
   .then(() => console.log('☔️Database connected!'))
