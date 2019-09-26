@@ -3,7 +3,7 @@ const cors = require('cors');
 const app = express();
 // Eileen test:
 // const router = require('./router');
-const db = require('./models/index');
+const db = requhire('./models/index');
 // dummy change
 // dummy change 2
 // dummy change 3
