@@ -1,8 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-
-const router = require('./router');
+// Eileen test:
+// const router = require('./router');
 const db = require('./models/index');
 // dummy change
 // dummy change 2
