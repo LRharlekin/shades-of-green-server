@@ -1,13 +1,10 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-// Eileen test:
-// const router = require('./router');
-const db = requhhire('./models/index');
-// dummy change
-// dummy change 2
-// dummy change 3
-// dummy change 4
+
+const router = require('./router');
+const db = require('./models/index');
+
 // test db: 
 db.sequelize.authenticate()
   .then(() => console.log('☔️Database connected!'))
