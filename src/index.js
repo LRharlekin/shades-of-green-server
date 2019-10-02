@@ -5,7 +5,6 @@ const app = express();
 const router = require('./router');
 const db = require('./models/index');
 
-// test db: 
 db.sequelize.authenticate()
   .then(() => console.log('☔️Database connected!'))
   .catch(err => console.error(err));

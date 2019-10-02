@@ -5,7 +5,7 @@ const path = require('path');
 const basename = path.basename(__filename);
 const db = {};
 
-const sequelize = new Sequelize('shades_of_green', "postgres", null, {
+const sequelize = new Sequelize('shades_of_green', "eileenjurgens", null, {
   host: 'localhost',
   dialect: 'postgres',
   logging: false,

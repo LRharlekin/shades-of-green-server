@@ -3,23 +3,25 @@
 const db = require('./models');
 
 
-exports.getUsers = async (req, res, next) => {
+exports.getUsers = async (req, res) => {
   try {
-    const users = await db.Users.findAll()
-    res.send(users)
+    const users = await db.Users.findAll();    
+    res.status(201);
+    res.send(users);
   } catch (e) {
-    console.error(e);
-    res.status = 500;
+    res.status(500);
+    res.send(e);
   }
 };
 
-exports.getPlaces = async (req, res, next) => {
+exports.getPlaces = async (req, res) => {
   try {
     const places = await db.Places.findAll();
-    res.send(places)
+    res.status(201);
+    res.send(places);
   } catch (e) {
-    console.error(e);
-    res.status = 500;
+    res.status(500);
+    res.send(e);
   }
 };
 
@@ -37,10 +39,11 @@ exports.addVote = async (req, res) => {
     });
     const [_, [updatedSumNTotal]] = await db.Places.update({ total_score: place.total_score + score, num_of_votes: place.num_of_votes + 1 }, { where: { google_id: place_google_id }, returning: true });
     const updatedScore = await db.Places.update({ average_score: updatedSumNTotal.total_score / updatedSumNTotal.num_of_votes }, { where: { google_id: place_google_id }, returning: true });
-    res.send(updatedScore)
+    res.status(201);
+    res.send(updatedScore);
   } catch (e) {
-    console.error(e);
-    res.status = 500;
+    res.status(500);
+    res.send(e);
   }
 };
 
@@ -48,10 +51,11 @@ exports.getCurrentScore = async (req, res) => {
   try {
     const { google_id } = req.body;
     const currentScore = await db.Places.findOne({ where: { google_id: google_id } })
-    res.send(currentScore) 
+    res.status(201); 
+    res.send(currentScore);
   } catch (e) {
-    console.error(e);
-    res.status = 500;
+    res.status(500);
+    res.send(e);
   }
 };
 
